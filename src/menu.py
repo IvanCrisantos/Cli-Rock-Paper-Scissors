@@ -1,5 +1,5 @@
-from game_data import game_stats
 from game_data import view_stats
+from game_data import game_round
 
 
 def show_menu():
@@ -13,6 +13,7 @@ def show_menu():
         choice = input("Choose an option: ").strip()
         if choice == "1":
             print("You chose to start a round")
+            game_round()
         elif choice == "2":
             print("You chose to view stats")
             view_stats()

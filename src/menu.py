@@ -1,6 +1,5 @@
 from game_data import game_stats
-
-print(game_stats)
+from game_data import view_stats
 
 
 def show_menu():
@@ -16,6 +15,7 @@ def show_menu():
             print("You chose to start a round")
         elif choice == "2":
             print("You chose to view stats")
+            view_stats()
         elif choice == "3":
             print("You chose to exit")
             is_running = False

@@ -13,25 +13,32 @@ def view_stats():
 
 
 def game_round():
-    user = input("Choose Rock, Paper or Scissor? ").strip().lower()
-    options = ["Rock", "Paper", "Scissor"]
-    computer = random.choice(options).lower()
-    if user == computer:
-        print(f"You picked {user}, the computer picked {computer}")
-        print("It's a tie")
-        game_stats["ties"] += 1
-    elif (
-        user == "rock"
-        and computer == "scissor"
-        or user == "scissor"
-        and computer == "paper"
-        or user == "paper"
-        and computer == "rock"
-    ):
-        print(f"You picked {user}, the computer picked {computer}")
-        print("You Win!!!")
-        game_stats["wins"] += 1
-    else:
-        print(f"You picked {user}, the computer picked {computer}")
-        print("You Lose!!!")
-        game_stats["losses"] += 1
+    while True:
+        user = input("Choose Rock, Paper or Scissor? ").strip().lower()
+        options = ["rock", "paper", "scissor"]
+        if user not in options:
+            print("Invalid Choice. Try Again")
+            continue
+        computer = random.choice(options).lower()
+        if user == computer:
+            print(f"You picked {user}, the computer picked {computer}")
+            print("It's a tie")
+            game_stats["ties"] += 1
+            break
+        elif (
+            user == "rock"
+            and computer == "scissor"
+            or user == "scissor"
+            and computer == "paper"
+            or user == "paper"
+            and computer == "rock"
+        ):
+            print(f"You picked {user}, the computer picked {computer}")
+            print("You Win!!!")
+            game_stats["wins"] += 1
+            break
+        else:
+            print(f"You picked {user}, the computer picked {computer}")
+            print("You Lose!!!")
+            game_stats["losses"] += 1
+            break

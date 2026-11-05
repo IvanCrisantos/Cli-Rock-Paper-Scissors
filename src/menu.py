@@ -1,3 +1,8 @@
+from game_data import game_stats
+
+print(game_stats)
+
+
 def show_menu():
     is_running = True
     while is_running:
@@ -8,9 +13,9 @@ def show_menu():
 
         choice = input("Choose an option: ").strip()
         if choice == "1":
-            print("You chose option 1")
+            print("You chose to start a round")
         elif choice == "2":
-            print("You chose option 2")
+            print("You chose to view stats")
         elif choice == "3":
             print("You chose to exit")
             is_running = False

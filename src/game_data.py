@@ -9,26 +9,26 @@ def view_stats():
     print(f"Games Lost: {game_stats['losses']}")
     print(f"Games Tied: {game_stats['ties']}")
     total = game_stats["wins"] + game_stats["losses"] + game_stats["ties"]
-    print(f"Total Games: {total}")
+    print(f"Games Played: {total}")
 
 
 def game_round():
     while True:
-        user = input("Choose Rock, Paper or Scissor? ").strip().lower()
-        options = ["rock", "paper", "scissor"]
+        user = input("Choose Rock, Paper or Scissors? ").strip().lower()
+        options = ["rock", "paper", "scissors"]
         if user not in options:
             print("Invalid Choice. Try Again")
             continue
         computer = random.choice(options).lower()
         if user == computer:
             print(f"You picked {user}, the computer picked {computer}")
-            print("It's a tie")
+            print("It's a Tie")
             game_stats["ties"] += 1
             break
         elif (
             user == "rock"
-            and computer == "scissor"
-            or user == "scissor"
+            and computer == "scissors"
+            or user == "scissors"
             and computer == "paper"
             or user == "paper"
             and computer == "rock"

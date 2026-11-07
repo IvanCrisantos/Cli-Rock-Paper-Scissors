@@ -1,5 +1,4 @@
-from game_data import view_stats
-from game_data import game_round
+from game_data import view_stats, game_round, final_stats
 
 
 def show_menu():
@@ -19,6 +18,7 @@ def show_menu():
             view_stats()
         elif choice == "3":
             print("You chose to exit")
+            final_stats()
             is_running = False
         else:
             print("Invalid choice. Please try again.")

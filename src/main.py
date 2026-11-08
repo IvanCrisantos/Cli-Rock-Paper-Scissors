@@ -8,7 +8,7 @@ from menu import show_menu
 def start_app():
     print("Welcome to Rock Paper Scissors!!!")
     show_menu()
-    print("\nGoodbye!")
+    print("\nGoodbye! Thanks for Playing!!!")
 
 
 if __name__ == "__main__":
